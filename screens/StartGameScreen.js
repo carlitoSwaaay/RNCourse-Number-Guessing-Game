@@ -1,7 +1,10 @@
-import { TextInput } from 'react-native';
+import { TextInput, View } from 'react-native';
 
 const StartGameScreen = () => {
-  return ()
+  return
+  <View>
+    <TextInput />
+  </View>
 };
 
 export default StartGameScreen;
