@@ -6,7 +6,8 @@ const StartGameScreen = () => {
   return (
   <View>
     <TextInput />
-      <PrimaryButton>Start Game</PrimaryButton>
+      <PrimaryButton>Reset</PrimaryButton>
+      <PrimaryButton>Confirm</PrimaryButton>
   </View>
   );
 };
