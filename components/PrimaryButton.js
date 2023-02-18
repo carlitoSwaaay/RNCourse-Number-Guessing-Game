@@ -1,6 +1,6 @@
 import { Text, View, Pressable, StyleSheet } from "react-native";
 
-const primaryButton = ({ children }) => {
+const PrimaryButton = ({ children, onPress }) => {
 
   const pressHandler = () => {
     console.log("pressed");
@@ -19,11 +19,10 @@ const primaryButton = ({ children }) => {
   );
 };
 
-export default primaryButton;
+export default PrimaryButton;
 
 const styles = StyleSheet.create({
   buttonOuterContainer: {
-    flexBox: 1,
     borderRadius: 28,
     margin: 4,
     overflow: 'hidden',
