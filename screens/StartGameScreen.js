@@ -7,6 +7,14 @@ const StartGameScreen = () => {
 
   const [enteredNumber, setEnteredNumber] = useState('');
 
+  const numberInputHandler = (enteredText) => {
+    setEnteredNumber(enteredText);
+  };
+
+  const confirmInputHandler = () => {
+
+  };
+
   return (
     <View style={styles.inputContainer}>
       <TextInput
@@ -15,13 +23,15 @@ const StartGameScreen = () => {
         keyboardType="number-pad"
         autoCapitalize='none'
         autoCorrect={false}
+        value={enteredNumber}
+        onChangeText={numberInputHandler}
       />
       <View style={styles.buttonsContainer}>
         <View style={styles.buttonContainer}>
           <PrimaryButton >Reset</PrimaryButton>
         </View>
         <View style={styles.buttonContainer}>
-          <PrimaryButton >Confirm</PrimaryButton>
+          <PrimaryButton onPress={ } >Confirm</PrimaryButton>
         </View>
       </View>
     </View>
