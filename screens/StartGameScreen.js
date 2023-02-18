@@ -5,7 +5,7 @@ import PrimaryButton from '../components/PrimaryButton';
 
 const StartGameScreen = () => {
 
-  const [enteredValue, setEnteredValue] = useState('');
+  const [enteredNumber, setEnteredNumber] = useState('');
 
   return (
     <View style={styles.inputContainer}>
