@@ -23,8 +23,8 @@ const StartGameScreen = () => {
         keyboardType="number-pad"
         autoCapitalize='none'
         autoCorrect={false}
-        value={enteredNumber}
         onChangeText={numberInputHandler}
+        value={enteredNumber}
       />
       <View style={styles.buttonsContainer}>
         <View style={styles.buttonContainer}>
