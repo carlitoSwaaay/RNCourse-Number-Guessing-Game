@@ -5,8 +5,8 @@ import Colors from "../../constants/colors";
 
 const NumberContainer = ({ children }) => {
   return (
-    <View>
-      <Text>{children}</Text>
+    <View style={styles.container}>
+      <Text style={styles.numberText}>{children}</Text>
     </View>
   );
 };
