@@ -12,9 +12,9 @@ const generateRandomBetween = (min, max, exclude) => {
   }
 };
 
-const GameScreen = () => {
+const GameScreen = ({ userNumber }) => {
 
-  const initialGuess = generateRandomBetween(1, 100,);
+  const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
   return (
