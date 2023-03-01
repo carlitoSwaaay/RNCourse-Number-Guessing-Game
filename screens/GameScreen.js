@@ -5,6 +5,7 @@ import Colors from '../constants/colors';
 const GameScreen = () => {
   return (
     <View style={styles.screen}>
+      <Text style={styles.title}>Opponent's Guess</Text>
 
       {/* Guess */}
       <View>
