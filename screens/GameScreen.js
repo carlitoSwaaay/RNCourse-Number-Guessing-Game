@@ -1,7 +1,9 @@
 import react, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import NumberContainer from '../components/game/NumberContainer';
 import Colors from '../constants/colors';
+
+import Title from '../components/ui/Title';
+import NumberContainer from '../components/game/NumberContainer';
 
 const generateRandomBetween = (min, max, exclude) => {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
