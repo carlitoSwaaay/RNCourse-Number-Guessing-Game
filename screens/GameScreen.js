@@ -22,7 +22,7 @@ const GameScreen = ({ userNumber }) => {
 
   return (
     <View style={styles.screen}>
-      <Title>Opponent's guess</Title>
+      <Title style={styles.title}>Opponent's guess</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <View>
         <Text>Higher or Lower?</Text>
@@ -40,15 +40,5 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 50,
-  },
-  title: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: Colors.accent500,
-    textAlign: 'center',
-    borderWidth: 2,
-    borderColor: Colors.accent500,
-    padding: 10,
-
   },
 });
