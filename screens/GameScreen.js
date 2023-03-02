@@ -15,26 +15,38 @@ const generateRandomBetween = (min, max, exclude) => {
   }
 };
 
+let minBoundary = 1;
+let maxBoundary = 100;
+
 const GameScreen = ({ userNumber }) => {
 
-  const initialGuess = generateRandomBetween(1, 100, userNumber);
+  const initialGuess = generateRandomBetween(minBoundary, maxBoundary, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
   const nextGuessHandler = (direction) => {
     if (direction === 'lower') {
-      generateRandomBetween()
+      maxBoundary = currentGuess;
+    } else {
+      minBoundary = currentGuess + 1;
     }
+    console.log(minBoundary, maxBoundary);
+    const newRandomNumber = generateRandomBetween(minBoundary, maxBoundary, currentGuess);
+    setCurrentGuess(newRandomNumber);
   };
 
   return (
     <View style={styles.screen}>
-      <Title style={styles.title}>Opponent's guess</Title>
+      <Title>Opponent's guess</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <View>
         <Text>Higher or Lower?</Text>
         <View>
-          <PrimaryButton onPress={ }>+</PrimaryButton>
-          <PrimaryButton onPress={ }>-</PrimaryButton>
+          <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
+            -
+          </PrimaryButton>
+          <PrimaryButton onPress={nextGuessHandler.bind(this, 'higher')}>
+            +
+          </PrimaryButton>
         </View>
       </View>
       <View>{/*LOG ROUNDS*/}</View>
