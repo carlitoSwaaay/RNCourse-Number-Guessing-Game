@@ -102,8 +102,9 @@ const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
     marginTop: 100,
-    marginHorizontal: 5,
+    marginHorizontal: 2,
     padding: 5,
+    alignItems: 'center',
 
   },
 
