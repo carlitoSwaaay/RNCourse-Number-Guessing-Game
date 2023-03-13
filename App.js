@@ -3,7 +3,7 @@ import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
 
 import { useFonts } from 'expo-font';
 
-import AppLoading from 'expo-app-loading';
+import * as SplashScreen from 'expo-splash-screen';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import Colors from './constants/colors';
@@ -23,7 +23,7 @@ export default function Apps() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <SplashScreen />;
   }
 
   const pickedNumberHandler = (pickedNumber) => {
