@@ -1,12 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text } from "react-native";
+import { StyleSheet, Image, View } from "react-native";
+import PrimaryButton from "../components/ui/PrimaryButton";
+import Title from "../components/ui/Title";
 
 import Colors from "../constants/colors";
 
 
 const GameOverScreen = () => {
   return (
-    <View style={styles.screen}>
-      <Text style={styles.text}>Game Over</Text>
+    <View style={styles.rootContainer}>
+      <Title>Game Over!</Title>
+      <View style={styles.imageContainer}>
+        <Image style={styles.image} source={require('../assets/success.png')} />
+      </View>
+      <Text style={styles.summaryText}>
+        The computer took <Text style={styles.highlight}>X </Text>
+        rounds to guess number <Text style={styles.highlight}>Y</Text>!
+      </Text>
+      <PrimaryButton>Start New Game</PrimaryButton>
     </View>
   );
 };
@@ -14,16 +25,36 @@ const GameOverScreen = () => {
 export default GameOverScreen;
 
 const styles = StyleSheet.create({
-  screen: {
+  rootContainer: {
     flex: 1,
+    padding: 24,
     justifyContent: 'center',
     alignItems: 'center',
 
   },
-  text: {
-    fontSize: 50,
-    fontWeight: 'bold',
-    color: Colors.accent500,
+  imageContainer: {
+    width: 300,
+    height: 300,
+    borderRadius: 150,
+    borderWidth: 3,
+    borderColor: Colors.primary800,
+    overflow: 'hidden',
+    margin: 36,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  summaryText: {
+    fontFamily: 'open-sans-bold',
+    fontSize: 22,
+    textAlign: 'center',
+    marginBottom: 24,
+
+  },
+  highlight: {
+    color: Colors.primary500,
+    fontFamily: 'open-sans-bold',
   },
 
 });
