@@ -12,7 +12,10 @@ const GameOverScreen = () => {
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={require('../assets/success.png')} />
       </View>
-      <Text>The computer took X rounds to guess number Y!</Text>
+      <Text style={styles.summaryText}>
+        The computer took <Text style={styles.highlight}>X </Text>
+        rounds to guess number <Text style={styles.highlight}>Y</Text>!
+      </Text>
     </View>
   );
 };
@@ -39,6 +42,16 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
+  },
+  summaryText: {
+    fontFamily: 'open-sans',
+    fontSize: 18,
+    textAlign: 'center',
+
+  },
+  highlight: {
+    color: Colors.primary500,
+    fontFamily: 'open-sans-bold',
   },
 
 });
