@@ -12,7 +12,7 @@ const GuessLogItem = ({ roundNumber, guess }) => {
   </View>
 }
 
-export default GuessLogItem;.
+export default GuessLogItem;
 
 const styles = StyleSheet.create({
   listItem: {
