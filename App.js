@@ -23,20 +23,13 @@ export default function Apps() {
 
   const [userNumber, setUserNumber] = useState();
   const [gameIsOver, setGameIsOver] = useState(true);
-  //const [appIsReady, setAppIsReady] = useState(false); // This is the state that will be used to determine if the app is ready to be shown.
+  const [guessRounds, setGuessRounds] = useState(0);
 
   const [fontsLoaded] = useFonts({
     "open-sans": require('./assets/fonts/OpenSans-Regular.ttf'),
     "open-sans-bold": require('./assets/fonts/OpenSans-Bold.ttf'),
   });
 
-
-  // useEffect(() => {
-  //   if (fontsLoaded) {
-  //     SplashScreen.hideAsync(); // Hides the splash screen after the app is ready.
-  //     setAppIsReady(true);
-  //   }
-  // }, [fontsLoaded]);
 
   useEffect(() => {
     async function hideSplashScreen() {
@@ -62,6 +55,11 @@ export default function Apps() {
     setGameIsOver(true);
   };
 
+  const startNewGameHandler = () => {
+    setUserNumber(null);
+    setGuessRounds(0);
+  }
+
   let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 
   if (userNumber) {
@@ -69,8 +67,15 @@ export default function Apps() {
   };
 
   if (gameIsOver && userNumber) {
-    screen = <GameOverScreen />
+    screen = (
+      <GameOverScreen
+        userNumber={userNumber}
+        roundsNumber={guessRounds}
+        onStartNewGame={startNewGameHandler}
+      />
+    );
   };
+
 
 
   return (
