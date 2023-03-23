@@ -6,9 +6,9 @@ import Colors from "../../constants/colors";
 
 
 const GuessLogItem = ({ roundNumber, guess }) => {
-  return <View>
-    <Text>#{roundNumber}</Text>
-    <Text>Opponent's Guess: {guess}</Text>
+  return <View style={styles.listItem}>
+    <Text style={styles.itemText}>#{roundNumber}</Text>
+    <Text >Opponent's Guess: {guess}</Text>
   </View>
 }
 
@@ -31,4 +31,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3,
   },
-});
+  itemText: {
+    fontFamily: 'open-sans',
+  },
+}); a
