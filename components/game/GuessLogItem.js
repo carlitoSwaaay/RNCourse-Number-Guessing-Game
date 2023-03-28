@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     width: '100%',
-    elevation: 10,
+    elevation: 6,
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.25,
@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
   itemText: {
     fontFamily: 'open-sans',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 14,
   },
 }); 
