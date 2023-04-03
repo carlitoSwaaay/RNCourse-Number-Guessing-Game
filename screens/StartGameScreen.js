@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInput, View, StyleSheet, Alert } from 'react-native';
+import { TextInput, View, StyleSheet, Alert, Dimensions } from 'react-native';
 
 
 import Card from '../components/ui/Card';
@@ -70,6 +70,8 @@ const StartGameScreen = ({ onPickNumber }) => {
 
 export default StartGameScreen;
 
+const deviceHeight = Dimensions.get('window').height; 
+
 const styles = StyleSheet.create({
   numberInput: {
     height: 50,
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
   },
   rootContainer: {
     flex: 1,
-    marginTop: 100,
+    marginTop: deviceHeight < 400 ? 30 : 100,
     marginHorizontal: 2,
     padding: 5,
     alignItems: 'center',
