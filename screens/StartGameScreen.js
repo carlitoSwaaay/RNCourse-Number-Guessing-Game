@@ -43,10 +43,10 @@ const StartGameScreen = ({ onPickNumber }) => {
     onPickNumber(chosenNumber);
   };
 
-  const marginTop = height < 380 ? 30 : 100;
+  const marginTopDistance = height < 380 ? 30 : 100;
 
   return (
-    <View style={styles.rootContainer}>
+    <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
       <Title>Guess my Number</Title>
       <Card>
         <InstructionText>Enter a Number</InstructionText>
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   rootContainer: {
     flex: 1,
-    marginTop: deviceHeight < 400 ? 30 : 100,
+    // marginTop: deviceHeight < 400 ? 30 : 100,
     marginHorizontal: 2,
     padding: 5,
     alignItems: 'center',
