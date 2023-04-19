@@ -74,7 +74,7 @@ const StartGameScreen = ({ onPickNumber }) => {
 
 export default StartGameScreen;
 
-const deviceHeight = Dimensions.get('window').height; 
+// const deviceHeight = Dimensions.get('window').height; 
 
 const styles = StyleSheet.create({
   numberInput: {
