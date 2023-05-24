@@ -49,7 +49,7 @@ const StartGameScreen = ({ onPickNumber }) => {
     <ScrollView style={styles.screen}>
       <KeyboardAvoidingView style={styles.screen} behavior='position'>
     <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
-      <Title>Guess my Number</Title>
+          <Title>Guess My Number</Title>
       <Card>
         <InstructionText>Enter a Number</InstructionText>
       <TextInput
