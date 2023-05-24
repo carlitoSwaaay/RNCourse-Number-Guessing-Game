@@ -46,7 +46,7 @@ const StartGameScreen = ({ onPickNumber }) => {
   const marginTopDistance = height < 380 ? 30 : 100;
 
   return (
-    <KeyboardAvoidingView>
+    <KeyboardAvoidingView style={styles.screen}>
     <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
       <Title>Guess my Number</Title>
       <Card>
@@ -79,6 +79,9 @@ export default StartGameScreen;
 // const deviceHeight = Dimensions.get('window').height; 
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
   numberInput: {
     height: 50,
     width: 50,
