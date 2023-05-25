@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInput, View, StyleSheet, Alert, useWindowDimensions } from 'react-native';
+import { TextInput, View, StyleSheet, Alert, useWindowDimensions, KeyboardAvoidingView, ScrollView } from 'react-native';
 
 
 import Card from '../components/ui/Card';
@@ -46,8 +46,10 @@ const StartGameScreen = ({ onPickNumber }) => {
   const marginTopDistance = height < 380 ? 30 : 100;
 
   return (
+    <ScrollView style={styles.screen}>
+      <KeyboardAvoidingView style={styles.screen} behavior='position'>
     <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
-      <Title>Guess my Number</Title>
+          <Title>Guess My Number</Title>
       <Card>
         <InstructionText>Enter a Number</InstructionText>
       <TextInput
@@ -69,14 +71,19 @@ const StartGameScreen = ({ onPickNumber }) => {
       </View>
       </Card>
     </View>
+    </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 
 export default StartGameScreen;
 
-const deviceHeight = Dimensions.get('window').height; 
+// const deviceHeight = Dimensions.get('window').height; 
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
   numberInput: {
     height: 50,
     width: 50,
