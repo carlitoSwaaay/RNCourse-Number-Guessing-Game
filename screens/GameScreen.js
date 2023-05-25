@@ -94,7 +94,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
           Higher or Lower?
         </InstructionText>
         <View>
-          <View style={styles.buttonContainer}>
+          <View style={styles.buttonsContainerWide}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, 'higher')}>
               <Ionicons name="md-add" size={26} color={"white"} />
             </PrimaryButton>
@@ -162,5 +162,9 @@ const styles = StyleSheet.create({
   listContainer: {
     flex: 1,
     padding: 16,
+  },
+  buttonsContainerWide: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
