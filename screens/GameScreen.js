@@ -90,19 +90,17 @@ const GameScreen = ({ userNumber, onGameOver }) => {
   if (width > 500) {
     content = (
       <>
-        <InstructionText style={styles.instructionText}>
-          Higher or Lower?
-        </InstructionText>
-        <View>
-          <View style={styles.buttonsContainerWide}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, 'higher')}>
-              <Ionicons name="md-add" size={26} color={"white"} />
+
+        <View style={styles.buttonsContainerWide}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
+              <Ionicons name="md-remove" size={26} color={"white"} />
             </PrimaryButton>
           </View>
           <NumberContainer>{currentGuess}</NumberContainer>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
-              <Ionicons name="md-remove" size={26} color={"white"} />
+            <PrimaryButton onPress={nextGuessHandler.bind(this, 'higher')}>
+              <Ionicons name="md-add" size={26} color={"white"} />
             </PrimaryButton>
           </View>
         </View>
@@ -112,7 +110,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 
   return (
     <View style={styles.screen}>
-      <Title>Opponent's guess</Title>
+      <Title>Opponent's Guess</Title>
       {content}
       <View style={styles.listContainer}  >
         {/* {guessRounds.map(guessRound => <Text key={guessRound}>{guessRound}</Text>)} */}
@@ -158,10 +156,12 @@ const styles = StyleSheet.create({
   },
   instructionText: {
     marginBottom: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   listContainer: {
     flex: 1,
-    padding: 16,
+    padding: 6,
   },
   buttonsContainerWide: {
     flexDirection: 'row',
