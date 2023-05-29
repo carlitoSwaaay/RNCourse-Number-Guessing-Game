@@ -2,9 +2,7 @@
 import { StyleSheet, Image, View, useWindowDimensions, Text, ScrollView } from "react-native";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Title from "../components/ui/Title";
-
 import Colors from "../constants/colors";
-
 
 const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
   const { width, height } = useWindowDimensions();
